@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotDevJobs - Find Your Dream Job</title>
+
+    <!-- Link CSS from static folder -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <!-- Link JS from static folder -->
+    <script defer th:src="@{/js/script.js}"></script>
+</head>
+<body>
+
+<!-- Header / Logo -->
+<header>
+    <div class="logo">
+        <span class="logo-text">hotdevjobs</span><span class="dot">.com</span>
+    </div>
+    <div class="login-buttons">
+        <a href="#" class="btn candidate">Job Candidate Login / Register</a>
+        <a href="#" class="btn recruiter">Recruiter Login / Register</a>
+    </div>
+</header>
+
+<!-- Search Section -->
+<<section class="search-section">
+    <div class="search-box">
+        <input type="text" placeholder="Search for a job">
+        <input type="text" placeholder="Enter a location">
+        <button><span class="search-icon">🔍</span></button>
+    </div>
+</section>
+
+</body>
+</html>
