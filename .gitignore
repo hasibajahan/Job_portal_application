@@ -29,3 +29,6 @@ Thumbs.db
 # VS Code (if used)
 # =========================
 .vscode/
+# Ignore Word documents
+*.docx
+~$*.docx
