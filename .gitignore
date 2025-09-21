@@ -1,0 +1,31 @@
+# =========================
+# Build & Dependency Folders
+# =========================
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+/build/
+/.gradle/
+
+# =========================
+# IntelliJ IDEA
+# =========================
+.idea/
+*.iml
+out/
+
+# =========================
+# Logs & Temp Files
+# =========================
+*.log
+*.tmp
+
+# =========================
+# OS Specific
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# VS Code (if used)
+# =========================
+.vscode/
