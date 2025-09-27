@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User Account</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
+        body { display:flex; height:100vh; }
+        .left {
+            flex:1;
+            background: url("assets/registration_form.jpeg") no-repeat center center;
+            background-size: cover;
+            position: relative;
+            padding:20px;
+            color:white;
+        }
+        .left::before {
+            content:"";
+            position:absolute; top:0; left:0; width:100%; height:100%;
+            background-color: rgba(0,0,0,0.35); z-index:1;
+        }
+        .logo { font-size:28px; font-weight:bold; z-index:2; position:relative; }
+        .logo span { background:#f44336; padding:5px 10px; border-radius:4px; color:white; }
+
+        .right {
+            flex:1;
+            background:#fff;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .form-box {
+            width:80%; max-width:350px; text-align:center;
+        }
+        .form-box h2 { margin-bottom:20px; font-size:22px; color:#333; }
+        .form-box input, .form-box select {
+            width:100%; padding:12px; margin:10px 0;
+            border:1px solid #ccc; border-radius:6px; font-size:14px;
+        }
+        .form-box button {
+            width:100%; padding:12px; background:#f44336;
+            border:none; border-radius:6px; color:white; font-size:16px; cursor:pointer;
+        }
+        .form-box button:hover { background:#d83228; }
+    </style>
+</head>
+<body>
+
+<div class="left">
+    <div class="logo">hotdevjobs <span>.com</span></div>
+</div>
+
+<div class="right">
+    <div class="form-box">
+        <h2>Create User Account</h2>
+
+        <form th:action="@{/register/new}" th:object="${user}" method="post">
+            <input type="email" th:field="*{email}" placeholder="Email" required>
+            <input type="password" th:field="*{password}" placeholder="Password" required>
+
+            <select th:field="*{userTypeId}" required>
+                <option th:each="type : ${getAllTypes}"
+                        th:value="${type.userTypeId}"
+                        th:text="${type.userTypeName}"></option>
+            </select>
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (job || location) {
             alert(`Searching for: ${job} in ${location}`);
-            // Later you can integrate backend API call here
+
         } else {
             alert("Please enter a job title or location.");
         }
