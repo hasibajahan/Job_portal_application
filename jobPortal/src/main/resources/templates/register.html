@@ -55,8 +55,11 @@
 <div class="right">
     <div class="form-box">
         <h2>Create User Account</h2>
+        <!-- Error message -->
+        <p th:if="${error}" th:text="${error}" style="color:red; font-size:14px; margin-bottom:10px;"></p>
 
         <form th:action="@{/register/new}" th:object="${user}" method="post">
+
             <input type="email" th:field="*{email}" placeholder="Email" required>
             <input type="password" th:field="*{password}" placeholder="Password" required>
 
